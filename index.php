@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HomePage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </head>
 <style>
@@ -141,6 +144,7 @@
         </div>
     </div>
     <?php include('header.php'); ?>
+    
         <div class="container-form">
             <div class="card">
                 <h1 class="title">NHẬP THÔNG TIN THÍ SINH</h1>
@@ -151,11 +155,11 @@
                     <input type="tel" id="phone" name="phone" placeholder="Vd: 0934888901" pattern="[0]{1}[0-9]{3}[0-9]{3}[0-9]{3}" required>
                     <label>Email</label>
                     <input type="email" id="email" name="email" placeholder="Vd: nguyenvana@gmail.com">
-                    <label>Chọn ngành bạn quan tâm</label>
+                    <label>Chọn ngành học bạn quan tâm</label>
                     <select name="majors">
-                        <option value="ktpm">Kỹ Thuật Phần Mềm</option>
-                        <option value="dmkt">Digital Marketing</option>
-                        <option value="tk3d">Thiết Kế 3D</option>
+                        <option value="KTPM">Kỹ Thuật Phần Mềm</option>
+                        <option value="DMKT">Digital Marketing</option>
+                        <option value="TK3D">Thiết Kế 3D</option>
                     </select>
                     <div class="buttons">
                         <button type="submit" class="login-button">BẮT ĐẦU</button>

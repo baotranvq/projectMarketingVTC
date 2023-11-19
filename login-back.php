@@ -22,13 +22,14 @@
         echo "<script type='text/javascript'>
             setTimeout(function() {
                 alert('$message');
-                window.location.href = 'index.php';
+                window.location.href = './index.php';
             }, 100); // Chuyển hướng sau 1 giây (1000 milliseconds)
           </script>";
+        
     } else {
         $sql1 = "INSERT INTO users (name, phone, email, majors, date) 
                         VALUES ('$name', '$phone', '$email', '$majors','$date') ";
         $result1 = mysqli_query($conn, $sql1);
-        echo '<script>window.open("./users/topic.php");</script>';
+        echo '<script>window.location.href ="./users/topic.php";</script>; ';   
     }
 ?>

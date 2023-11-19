@@ -9,9 +9,13 @@ require_once('../models/connect.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>GameShow</title>
+
+    </head>
 <style>
+    body{
+        margin: unset;
+    }
     /* header  */
     .home-header-logo {
         background-color: #014EB9;
@@ -22,7 +26,7 @@ require_once('../models/connect.php');
         width: 220px;
     }
 
-    /* BUTTON  */
+    /* BUTTON   */
     .fill:hover,
     .fill:focus {
         -webkit-box-shadow: inset 0 0 0 2em var(--hover);
@@ -133,7 +137,7 @@ require_once('../models/connect.php');
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        padding-top: 30px;
+        padding-top: 10px;
     }
 
     button {
@@ -171,18 +175,37 @@ require_once('../models/connect.php');
         font-size: 20px; 
         margin-left: 5px; 
     }
-    .btn-submit{
-        display: flex;
-        justify-content: center;
-        padding-top: 50px;
+
+    .buttons {
+        text-align: center;
+        padding-top: 20px;
     }
-    .btn-submit > input{
-        width: 250px;
-        height: 40px;
-        border-radius: 20px;
-        font-size: 22px;
-        font-weight: 600;
+    .login-button {
+        background-color: #203F7D;
+        color: #FEDA00;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 800;
     }
+    .login-button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+        text-decoration: none;
+    }
+    .login-button:hover {
+        background-color: #203F7D;
+        color: #fff;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .login-button:active {
+        box-shadow: 0 0 10px #19d4ca;
+    }
+
     /* Logic  */
     .active {
         display: none;
@@ -213,6 +236,10 @@ require_once('../models/connect.php');
         <div class="home-header-logo">
             <a href="../index.php"><img src="../public/images/logo-vtc-academy-white-20220812062339.png" alt=""></a>
         </div>
+    </div>
+
+    <div class="topic">
+        <h1>Chào bạn!<br>Mời bạn lựa chọn chủ đề tham gia mini game trả lời câu hỏi nhận quà nhé!</h1>
     </div>
     <!-- BUTTON  -->
     <div class="body-button">
@@ -247,7 +274,7 @@ require_once('../models/connect.php');
                 <form action="topic_back.php" method="post">
                     <input type="radio" name="answer" value="A" id="answer_a">
                     <label for="answer_a">A. <?php echo $kq['answer_a']; ?></label><br>
-
+                    
                     <input type="radio" name="answer" value="B" id="answer_b">
                     <label for="answer_b">B. <?php echo $kq['answer_b']; ?></label><br>
 
@@ -257,8 +284,8 @@ require_once('../models/connect.php');
                     <input type="hidden" name="correct_answer" value="<?php echo $kq['correct_answer']; ?>">
                     <!-- Add more radio buttons if needed -->
 
-                    <div class="btn-submit">
-                        <input type="submit" value="Submit">
+                    <div class="buttons">
+                        <button type="submit" class="login-button">Trả Lời</button>
                     </div>
                 </form>
         </div>
@@ -292,8 +319,8 @@ require_once('../models/connect.php');
                 <input type="hidden" name="correct_answer" value="<?php echo $kq['correct_answer']; ?>">
                 <!-- Add more radio buttons if needed -->
 
-                <div class="btn-submit">
-                    <input type="submit" value="Submit">
+                <div class="buttons">
+                        <button type="submit" class="login-button">Trả Lời</button>
                 </div>
             </form>
     </div>
@@ -328,8 +355,8 @@ require_once('../models/connect.php');
             <input type="hidden" name="correct_answer" value="<?php echo $kq['correct_answer']; ?>">
             <!-- Add more radio buttons if needed -->
 
-            <div class="btn-submit">
-                <input type="submit" value="Submit">
+            <div class="buttons">
+                <button type="submit" class="login-button">Trả Lời</button>
             </div>
         </form>
 </div>
@@ -351,6 +378,7 @@ require_once('../models/connect.php');
             $('.tab-pane').classList.remove('active-tab-pane')
             tabs.forEach((tab) => {
                 tab.classList.add('active');
+                $('.topic').classList.add('active')
             });
             this.classList.remove('active')
             pane.classList.add('active-tab-pane')
@@ -367,7 +395,8 @@ require_once('../models/connect.php');
 
             if (countdown <= 0) {
                 clearInterval(countdownInterval);
-                window.location.href = "your_redirect_page.php";
+                alert('Đã hết thời gian trả lời.\nCảm ơn bạn đã tham gia!')
+                window.location.href = "../index.php";
             }
 
             countdown--;
