@@ -8,9 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correctAnswer = $_POST["correct_answer"];
 
     if ($selectedAnswer === $correctAnswer) {
-        echo '<script>window.open("https://vongquaymayman.one/", "_blank");
-        window.location.href = "../index.php"
-        </script>';
+        echo '<script>
+        window.location.href = "https://vqmm.xspin.vn/vie-kor";
+        </script> ';
         exit();
     } else {
         $message = "Câu trả lời của bạn đã sai!";

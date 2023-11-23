@@ -11,14 +11,19 @@ require_once('../models/connect.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameShow</title>
 
-    </head>
+</head>
 <style>
-    body{
+    body {
         margin: unset;
+        background-image: url('../public/images/background.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family:sans-serif;
     }
+
     /* header  */
     .home-header-logo {
-        background-color: #014EB9;
+        /* background-color: #014EB9; */
         padding: 20px 60px;
     }
 
@@ -27,98 +32,6 @@ require_once('../models/connect.php');
     }
 
     /* BUTTON   */
-    .fill:hover,
-    .fill:focus {
-        -webkit-box-shadow: inset 0 0 0 2em var(--hover);
-        box-shadow: inset 0 0 0 2em var(--hover);
-    }
-
-    .pulse:hover,
-    .pulse:focus {
-        -webkit-animation: pulse 1s;
-        animation: pulse 1s;
-        -webkit-box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
-        box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
-    }
-
-    @-webkit-keyframes pulse {
-        0% {
-            -webkit-box-shadow: 0 0 0 0 var(--hover);
-            box-shadow: 0 0 0 0 var(--hover);
-        }
-    }
-
-    @keyframes pulse {
-        0% {
-            -webkit-box-shadow: 0 0 0 0 var(--hover);
-            box-shadow: 0 0 0 0 var(--hover);
-        }
-    }
-
-    .close:hover,
-    .close:focus {
-        -webkit-box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
-        box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
-    }
-
-    .raise:hover,
-    .raise:focus {
-        -webkit-box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-        -webkit-transform: translateY(-0.25em);
-        transform: translateY(-0.25em);
-    }
-
-    .up:hover,
-    .up:focus {
-        -webkit-box-shadow: inset 0 -3.25em 0 0 var(--hover);
-        box-shadow: inset 0 -3.25em 0 0 var(--hover);
-    }
-
-    .slide:hover,
-    .slide:focus {
-        -webkit-box-shadow: inset 6.5em 0 0 0 var(--hover);
-        box-shadow: inset 6.5em 0 0 0 var(--hover);
-    }
-
-    .offset {
-        -webkit-box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
-        box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
-    }
-
-    .offset:hover,
-    .offset:focus {
-        -webkit-box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
-        box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
-    }
-
-    .pulse {
-        --color: #ef6eae;
-        --hover: #ef8f6e;
-    }
-
-    .raise {
-        --color: #ffa260;
-        --hover: #e5ff60;
-    }
-
-    .slide {
-        --color: #8fc866;
-        --hover: #66c887;
-    }
-
-
-    button {
-        color: var(--color);
-        -webkit-transition: 0.25s;
-        transition: 0.25s;
-    }
-
-    button:hover,
-    button:focus {
-        border-color: var(--hover);
-        color: #014EB9;
-    }
 
     .body-button {
         /* color: #fff; */
@@ -150,36 +63,52 @@ require_once('../models/connect.php');
         border-radius: 300px;
     }
 
+    .tab-item {
+        padding: 0px 20px;
+    }
+
+    .tab-item>button {
+        height: 60px;
+        border-radius: 30px;
+
+    }
+
     h2 {
         font-weight: 600;
     }
-    h1{
+
+    h1 {
         text-align: center;
         color: #014EB9;
     }
+
     code {
         color: #e4cb58;
         font: inherit;
     }
+
     /* container  */
-    .tab-content{
+    .tab-content {
         display: flex;
         justify-content: center;
         padding: 0px 20px;
     }
+
     input[type="radio"] {
-        width: 20px; 
-        height: 20px; 
+        width: 20px;
+        height: 20px;
     }
+
     label {
-        font-size: 20px; 
-        margin-left: 5px; 
+        font-size: 20px;
+        margin-left: 5px;
     }
 
     .buttons {
         text-align: center;
         padding-top: 20px;
     }
+
     .login-button {
         background-color: #203F7D;
         color: #FEDA00;
@@ -187,6 +116,7 @@ require_once('../models/connect.php');
         font-size: 20px;
         font-weight: 800;
     }
+
     .login-button {
         padding: 10px 20px;
         border: none;
@@ -195,6 +125,7 @@ require_once('../models/connect.php');
         transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
         text-decoration: none;
     }
+
     .login-button:hover {
         background-color: #203F7D;
         color: #fff;
@@ -213,6 +144,10 @@ require_once('../models/connect.php');
 
     .tab-pane {
         display: none;
+        background-color: #fff;
+        opacity: 0.9;
+        padding: 20px;
+        border-radius: 20px;
     }
 
     .active-tab-pane {
@@ -220,13 +155,50 @@ require_once('../models/connect.php');
     }
 
     /* TIME  */
- 
+
     #timer {
         margin-top: 10px;
         display: flex;
         justify-content: center;
         font-size: 20px;
-        color:rgb(252, 81, 7);
+        color: rgb(252, 81, 7);
+    }
+
+    @media screen and (max-width:480px) {
+        h1 {
+            font-size: 20px;
+        }
+
+        .body-button {
+            display: unset !important;
+        }
+
+        .login-button {
+            width: unset;
+        }
+
+        .home-header-logo {
+            padding: 10px;
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+
+        .login-button:hover {
+            width: unset;
+        }
+
+        .home-header-logo img {
+            width: 150px;
+        }
+
+        .tab-item>button {
+            height: 40px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
     }
 </style>
 
@@ -234,35 +206,47 @@ require_once('../models/connect.php');
     <!-- HEADER  -->
     <div>
         <div class="home-header-logo">
-            <a href="../index.php"><img src="../public/images/logo-vtc-academy-white-20220812062339.png" alt=""></a>
+            <a href="../index.php"><img src="../public/images/logoVTC.png" alt=""></a>
         </div>
     </div>
 
     <div class="topic">
-        <h1>Chào bạn!<br>Mời bạn lựa chọn chủ đề tham gia mini game trả lời câu hỏi nhận quà nhé!</h1>
+        <h1>Chào bạn!<br>Mời bạn lựa chọn chủ đề tham gia minigame trả lời câu hỏi nhận quà nhé!</h1>
     </div>
     <!-- BUTTON  -->
     <div class="body-button">
+
+        <div class="tab-item ">
+            <button onclick="startTimer()" class="login-button">GAMING</button>
+        </div>
+        <div class="tab-item ">
+            <button onclick="startTimer()" class="login-button">KPOP MUSIC</button>
+        </div>
         <div class="tab-item">
+            <button onclick="startTimer()" class="login-button">COSPLAY & MANGA</button>
+        </div>
+
+        <!-- <div class="tab-item">
             <button id="btb-service" class="pulse" onclick="startTimer()">KPOP MUSIC</button>
         </div>
         <div class="tab-item">
-            <button id="btb-service" class="raise" onclick="startTimer()" >GAMING</button>
+            <button id="btb-service" class="raise" onclick="startTimer()">GAMING</button>
         </div>
         <div class="tab-item">
             <button id="btb-service" class="slide" onclick="startTimer()">COSPLAY & MANGA</button>
-        </div>
+        </div> -->
     </div>
     <!-- TIME  -->
     <div class="time-remaining" id="timer"></div>
     <!-- Tab content -->
     <div class="tab-content">
+
         <div class="tab-pane">
-        <h1> Câu hỏi về chủ đề Music</h1>
+            <h1>Câu hỏi về chủ đề Gaming</h1>
             <?php
             $sql = "
-    SELECT * FROM answers_musics 
-    JOIN questions_music ON answers_musics.id_question_music = questions_music.id_question_music 
+    SELECT * FROM answers_gaming 
+    JOIN questions_gaming ON answers_gaming.id_gaming  = questions_gaming.id_gaming 
     ORDER BY RAND() 
     LIMIT 1
 ";
@@ -270,11 +254,11 @@ require_once('../models/connect.php');
 
             while ($kq = mysqli_fetch_assoc($result)) {
             ?>
-                <h2><?php echo $kq['question_music']; ?></h2>
+                <h2><?php echo $kq['question_gaming']; ?></h2>
                 <form action="topic_back.php" method="post">
                     <input type="radio" name="answer" value="A" id="answer_a">
                     <label for="answer_a">A. <?php echo $kq['answer_a']; ?></label><br>
-                    
+
                     <input type="radio" name="answer" value="B" id="answer_b">
                     <label for="answer_b">B. <?php echo $kq['answer_b']; ?></label><br>
 
@@ -292,12 +276,13 @@ require_once('../models/connect.php');
     <?php
             }
     ?>
+
     <div class="tab-pane">
-        <h1>Câu hỏi về chủ đề Gaming</h1>
+        <h1> Câu hỏi về chủ đề KPOP Music</h1>
         <?php
         $sql = "
-    SELECT * FROM answers_gaming 
-    JOIN questions_gaming ON answers_gaming.id_gaming  = questions_gaming.id_gaming 
+    SELECT * FROM answers_musics 
+    JOIN questions_music ON answers_musics.id_question_music = questions_music.id_question_music 
     ORDER BY RAND() 
     LIMIT 1
 ";
@@ -305,7 +290,7 @@ require_once('../models/connect.php');
 
         while ($kq = mysqli_fetch_assoc($result)) {
         ?>
-            <h2><?php echo $kq['question_gaming']; ?></h2>
+            <h2><?php echo $kq['question_music']; ?></h2>
             <form action="topic_back.php" method="post">
                 <input type="radio" name="answer" value="A" id="answer_a">
                 <label for="answer_a">A. <?php echo $kq['answer_a']; ?></label><br>
@@ -320,13 +305,14 @@ require_once('../models/connect.php');
                 <!-- Add more radio buttons if needed -->
 
                 <div class="buttons">
-                        <button type="submit" class="login-button">Trả Lời</button>
+                    <button type="submit" class="login-button">Trả Lời</button>
                 </div>
             </form>
     </div>
 <?php
         }
 ?>
+
 
 <div class="tab-pane">
     <h1>Câu hỏi về chủ đề Cosplay & Manga</h1>
@@ -363,46 +349,46 @@ require_once('../models/connect.php');
 <?php
     }
 ?>
-</div>
+    </div>
 
-</div>
-<script>
-    const $ = document.querySelector.bind(document)
-    const $$ = document.querySelectorAll.bind(document)
+    </div>
+    <script>
+        const $ = document.querySelector.bind(document)
+        const $$ = document.querySelectorAll.bind(document)
 
-    const tabs = $$('.tab-item')
-    const panes = $$('.tab-pane')
-    tabs.forEach((tab, index) => {
-        const pane = panes[index]
-        tab.onclick = function() {
-            $('.tab-pane').classList.remove('active-tab-pane')
-            tabs.forEach((tab) => {
-                tab.classList.add('active');
-                $('.topic').classList.add('active')
-            });
-            this.classList.remove('active')
-            pane.classList.add('active-tab-pane')
-        }
-    })
-
-    // TIME 
-    function startTimer() {
-        var countdown = 10; // set time đếm ngược
-        var timerDisplay = document.getElementById("timer");
-
-        var countdownInterval = setInterval(function () {
-            timerDisplay.textContent = "Time remaining: " + countdown + " seconds";
-
-            if (countdown <= 0) {
-                clearInterval(countdownInterval);
-                alert('Đã hết thời gian trả lời.\nCảm ơn bạn đã tham gia!')
-                window.location.href = "../index.php";
+        const tabs = $$('.tab-item')
+        const panes = $$('.tab-pane')
+        tabs.forEach((tab, index) => {
+            const pane = panes[index]
+            tab.onclick = function() {
+                $('.tab-pane').classList.remove('active-tab-pane')
+                tabs.forEach((tab) => {
+                    tab.classList.add('active');
+                    $('.topic').classList.add('active')
+                });
+                this.classList.remove('active')
+                pane.classList.add('active-tab-pane')
             }
+        })
 
-            countdown--;
-        }, 1000);
-    }
-</script>
+        // TIME 
+        function startTimer() {
+            var countdown = 15; // set time đếm ngược
+            var timerDisplay = document.getElementById("timer");
+
+            var countdownInterval = setInterval(function() {
+                timerDisplay.textContent = "Time remaining: " + countdown + " seconds";
+
+                if (countdown <= 0) {
+                    clearInterval(countdownInterval);
+                    alert('Đã hết thời gian trả lời.\nCảm ơn bạn đã tham gia!')
+                    window.location.href = "../index.php";
+                }
+
+                countdown--;
+            }, 1000);
+        }
+    </script>
 </body>
 
 </html>

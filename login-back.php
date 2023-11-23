@@ -12,6 +12,10 @@
     if (isset($_POST['majors'])) {
         $majors = $_POST['majors'];
     }
+    
+    if (isset($_POST['course'])) {
+        $course = $_POST['course'];
+    }
     date_default_timezone_set('Asia/Ho_Chi_Minh');
     $date = date("Y-m-d H:i:s");
 
@@ -27,8 +31,8 @@
           </script>";
         
     } else {
-        $sql1 = "INSERT INTO users (name, phone, email, majors, date) 
-                        VALUES ('$name', '$phone', '$email', '$majors','$date') ";
+        $sql1 = "INSERT INTO users (name, phone, email, majors, date,course) 
+                        VALUES ('$name', '$phone', '$email', '$majors','$date','$course') ";
         $result1 = mysqli_query($conn, $sql1);
         echo '<script>window.location.href ="./users/topic.php";</script>; ';   
     }

@@ -11,16 +11,22 @@
 
 </head>
 <style>
-    /* header  */
-    .home-header-logo {
-        background-color: #014EB9;
+     body {
+        margin: unset;
+        background-image: url('./public/images/background.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+   
+     /* header  */
+     .home-header-logo {
+        /* background-color: #014EB9; */
         padding: 20px 60px;
     }
 
     .home-header-logo img {
         width: 220px;
     }
-
     /* form nhap thông tin */
 
     .container-form {
@@ -34,14 +40,14 @@
         text-align: center;
         font-size: 24px;
         margin-bottom: 20px;
-        color: #FEDA00;
+        color: #014EB9;
         font-size: 28px;
         font-weight: 700;
     }
 
     .card {
-        width: 500px;
-        margin: 50px 0px;
+        width: 600px;
+        margin-bottom: 50px;
         background-color: #fff;
         padding: 20px;
         border-radius: 10px;
@@ -53,6 +59,9 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+    }
+    form > label{
+        font-weight: 700;
     }
 
     input {
@@ -117,7 +126,10 @@
     @media (max-width: 480px) {
         .card {
             width: 100%;
-            max-width: 300px;
+        }
+        .container-form{
+            padding: 0px 5px;
+            
         }
     }
 
@@ -135,19 +147,33 @@
     option {
         color: blue;
     }
+    @media screen and (max-width:480px){
+        .card {
+            max-width: unset;
+        }
+        .container-form{
+            padding: 0px 5px;
+            
+        }
+        .home-header-logo{
+            padding: 10px;
+        }
+
+    }
 </style>
 
 <body>
+    <!-- HEADER  -->
     <div>
-    <div class="home-header-logo">
-            <a href="#"><img src="./public/images/logo-vtc-academy-white-20220812062339.png" alt=""></a>
+        <div class="home-header-logo">
+            <a href="./index.php"><img src="./public/images/logoVTC.png" alt=""></a>
         </div>
     </div>
-    <?php include('header.php'); ?>
+    <div>
     
         <div class="container-form">
             <div class="card">
-                <h1 class="title">NHẬP THÔNG TIN THÍ SINH</h1>
+                <h1 class="title">NHẬP THÔNG TIN NHẬN QUÀ</h1>
                 <form action="login-back.php" method="POST">
                     <label>Họ Tên</label>
                     <input type="text" name="name" placeholder="Vd: Nguyễn Văn A" required>
@@ -157,9 +183,18 @@
                     <input type="email" id="email" name="email" placeholder="Vd: nguyenvana@gmail.com">
                     <label>Chọn ngành học bạn quan tâm</label>
                     <select name="majors">
-                        <option value="KTPM">Kỹ Thuật Phần Mềm</option>
-                        <option value="DMKT">Digital Marketing</option>
+                        <option value="KTPM">Lập Trình Phần Mềm</option>
+                        <option value="LTG">Lập Trình Game</option>
+                        <option value="TKĐH">Thiết Kế Đồ Họa</option>
                         <option value="TK3D">Thiết Kế 3D</option>
+                        <option value="DGMK">Digital Marketing</option>
+                        <option value="NK">Ngành Khác</option>
+                    </select>
+                    <label>Bạn có muốn tham gia học thử lớp Lập trình game hoặc Thiết kế nhân vật game miễn phí tại VTC Academy Plus Đà Nẵng vào tuần sau không? (số lượng có hạn) ?</label>
+                    <select name="course">
+                        <option value="Yes">Vâng mình muốn tham gia</option>
+                        <option value="Reconsider">Mình cần xem xét lại</option>
+                        
                     </select>
                     <div class="buttons">
                         <button type="submit" class="login-button">BẮT ĐẦU</button>

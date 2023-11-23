@@ -1,10 +1,10 @@
-
 <style>
     /* FOOTER */
 
-    #Footer{
+    #Footer {
         border-top: 1px solid #051F4D;
     }
+
     .hover-effect1 {
         min-height: 20px;
         background: #fff;
@@ -55,6 +55,7 @@
 
     .col-md-4 p {
         font-size: 14px;
+        
     }
 
     .text-uppercase {
@@ -74,7 +75,7 @@
                         <p style="font-size: 14px;"> Công ty Cổ phần đầu tư phát triển giáo dục VTCE – Giấy CNĐKDN: 0105889280, đăng ký lần đầu ngày 22 tháng 05 năm 2012, cấp bởi sở KHĐT thành phố Hà Nội</p>
                     </div>
 
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" >
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <h6 style="margin: 16px;" class="text-uppercase font-weight-bold">VTC ACADEMY CN ĐÀ NẴNG</h6>
                         <p>
                             <i class="fas fa-home mr-3"></i> Cở sở Đà Nẵng: 130 Điện Biên Phủ, P. Chính Gián, Q. Thanh Khê, TP. Đà Nẵng
@@ -87,36 +88,17 @@
                             <i class="fas fa-envelope mr-3"></i> Email: info@vtc.edu.vn
                         </p>
                     </div>
-                    <div  class="col-md-4 mx-auto" >
-                        <img style="height: 270px;" src="./public/images/footer.png" alt="">
+                    <div class="col-md-4 mx-auto">
+                        <img style="height: 250px; width: 330px;" src="./public/images/footer.png" alt="">
                     </div>
                 </div>
             </div>
-            <!-- Social buttons -->
-            <!-- <div class="hover-effect1">
-                <ul style="background-color:#203F7D;" class="list-unstyled list-inline text-center">
-                    <li class="list-inline-item">
-                        <a href="https://www.facebook.com/codewithfaraz" title="Facebook"><i class="bi bi-facebook"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.twitter.com/codewithfaraz" title="Twitter"><i class="bi bi-twitter"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.instagram.com/codewithfaraz" title="Instagram"><i class="bi bi-instagram"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.youtube.com/@codewithfaraz" title="Youtube"><i class="bi bi-youtube"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#." title="Github"><i class="bi bi-tiktok"></i></a>
-                    </li>
-                </ul>
-            </div> -->
-            <!-- Copyright -->
+           
             <div class="footer-bottom">
-                <p>Copyright ©2023 VTC Academy</p>
+                <marquee width="100%" direction="right">
+                Copyright © Group: Bao-Au_Class: Software K2022
+                </marquee>
             </div>
         </footer>
 
     </div>
-
